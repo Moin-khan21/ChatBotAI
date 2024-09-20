@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-//import { OPENAI_API_KEY } from '@env';
-
-const API_KEY = 'sk-instalane-COcHz8Jg4sZUkZzriLyeT3BlbkFJD4WIjWRU0p650ijNlSK6';  // Hardcoded API Key
+import { OPENAI_API_KEY } from '@env';  
 
 const App = () => {
   const [input, setInput] = useState('');
@@ -56,7 +54,7 @@ const App = () => {
         },
         {
           headers: {
-            'Authorization': `Bearer ${API_KEY}`,
+            'Authorization': `Bearer ${OPENAI_API_KEY}`,
             'Content-Type': 'application/json'
           }
         }
